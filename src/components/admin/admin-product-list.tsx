@@ -3,7 +3,7 @@ import { PencilLine, Trash2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { formatPrice, resolveCategory } from "@/lib/catalog";
+import { formatPrice, resolveAssetUrl, resolveCategory } from "@/lib/catalog";
 import type { Category, Product } from "@/types/catalog";
 
 type AdminProductListProps = {
@@ -44,7 +44,7 @@ export function AdminProductList({
             <div className="grid gap-0 sm:grid-cols-[180px_1fr]">
               <div className="border-b border-white/70 bg-[linear-gradient(180deg,#f9fafb_0%,#eef2ff_100%)] sm:border-b-0 sm:border-r">
                 <img
-                  src={product.imageUrl}
+                  src={resolveAssetUrl(product.imageUrl)}
                   alt={product.name}
                   className="aspect-[16/10] h-full w-full object-cover sm:aspect-auto"
                 />

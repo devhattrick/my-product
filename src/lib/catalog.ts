@@ -32,3 +32,28 @@ export function buildLineInquiryUrl(lineUrl: string, product: Product) {
 
   return lineUrl;
 }
+
+export function resolveAssetUrl(assetPath: string) {
+  const normalizedPath = assetPath.trim();
+
+  if (!normalizedPath) {
+    return normalizedPath;
+  }
+
+  if (
+    normalizedPath.startsWith("http://") ||
+    normalizedPath.startsWith("https://") ||
+    normalizedPath.startsWith("//") ||
+    normalizedPath.startsWith("data:") ||
+    normalizedPath.startsWith("blob:")
+  ) {
+    return normalizedPath;
+  }
+
+  const baseUrl = import.meta.env.BASE_URL;
+  const relativePath = normalizedPath.startsWith("/")
+    ? normalizedPath.slice(1)
+    : normalizedPath;
+
+  return `${baseUrl}${relativePath}`;
+}

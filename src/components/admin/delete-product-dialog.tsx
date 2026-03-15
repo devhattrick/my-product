@@ -10,7 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { formatPrice, resolveCategory } from "@/lib/catalog";
+import { formatPrice, resolveAssetUrl, resolveCategory } from "@/lib/catalog";
 import type { Category, Product } from "@/types/catalog";
 
 type DeleteProductDialogProps = {
@@ -71,7 +71,11 @@ export function DeleteProductDialog({
           <div className="grid gap-5 px-5 pb-5 pt-5 sm:px-7 sm:pb-6">
             <div className="grid gap-4 rounded-[1.75rem] border border-slate-200/80 bg-white/90 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] sm:grid-cols-[112px_1fr]">
               <div className="overflow-hidden rounded-[1.25rem] border border-slate-100 bg-[linear-gradient(180deg,#f9fafb_0%,#eef2ff_100%)]">
-                <img src={product.imageUrl} alt={product.name} className="aspect-square h-full w-full object-cover" />
+                <img
+                  src={resolveAssetUrl(product.imageUrl)}
+                  alt={product.name}
+                  className="aspect-square h-full w-full object-cover"
+                />
               </div>
 
               <div className="grid gap-3">

@@ -3,7 +3,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { buildLineInquiryUrl, formatPrice } from "@/lib/catalog";
+import { buildLineInquiryUrl, formatPrice, resolveAssetUrl } from "@/lib/catalog";
 import type { Product } from "@/types/catalog";
 
 type ProductCardProps = {
@@ -21,7 +21,7 @@ export function ProductCard({ product, categoryName, lineUrl }: ProductCardProps
           {product.featured ? <Badge variant="highlight">Featured</Badge> : null}
         </div>
         <img
-          src={product.imageUrl}
+          src={resolveAssetUrl(product.imageUrl)}
           alt={product.name}
           className="aspect-[16/11] w-full object-cover transition duration-500 group-hover:scale-[1.02] sm:aspect-[4/3]"
         />
