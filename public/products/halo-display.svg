@@ -1,0 +1,32 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="72" fill="url(#bg)"/>
+  <circle cx="954" cy="180" r="210" fill="url(#glow)" fill-opacity="0.72"/>
+  <circle cx="240" cy="160" r="160" fill="#FFFFFF" fill-opacity="0.54"/>
+  <rect x="214" y="188" width="772" height="468" rx="36" fill="#111827"/>
+  <rect x="244" y="216" width="712" height="412" rx="24" fill="url(#screen)"/>
+  <path d="M520 690H680L708 770H492L520 690Z" fill="#C6CBD8"/>
+  <rect x="554" y="652" width="92" height="48" rx="18" fill="#D8DCE7"/>
+  <path d="M304 290C392.667 242 487.333 218 588 218C688.667 218 785.333 245.333 878 300V628H304V290Z" fill="url(#screenGlow)"/>
+  <circle cx="402" cy="378" r="86" fill="#F8FAFC" fill-opacity="0.75"/>
+  <text x="600" y="812" text-anchor="middle" fill="#0F172A" font-size="54" font-family="Manrope, Arial, sans-serif" font-weight="700">HALO DISPLAY 27</text>
+  <defs>
+    <linearGradient id="bg" x1="84" y1="66" x2="1068" y2="834" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFF"/>
+      <stop offset="0.56" stop-color="#E9EEF9"/>
+      <stop offset="1" stop-color="#FFF8E7"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(954 180) rotate(90) scale(210)">
+      <stop stop-color="#FDE68A"/>
+      <stop offset="1" stop-color="#FDE68A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="screen" x1="244" y1="216" x2="956" y2="628" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A5B4FC"/>
+      <stop offset="0.38" stop-color="#BFDBFE"/>
+      <stop offset="1" stop-color="#E2E8F0"/>
+    </linearGradient>
+    <linearGradient id="screenGlow" x1="304" y1="218" x2="878" y2="628" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#E0F2FE" stop-opacity="0.22"/>
+    </linearGradient>
+  </defs>
+</svg>

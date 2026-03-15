@@ -1,0 +1,18 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="72" fill="url(#bg)"/>
+  <circle cx="934" cy="174" r="188" fill="#FFFFFF" fill-opacity="0.54"/>
+  <path d="M268 278C268 237.131 301.131 204 342 204H858C898.869 204 932 237.131 932 278V620C932 660.869 898.869 694 858 694H342C301.131 694 268 660.869 268 620V278Z" fill="#D8D0C8"/>
+  <rect x="306" y="238" width="588" height="418" rx="42" fill="#E5DDD5"/>
+  <path d="M352 308H848" stroke="#C2B8AE" stroke-width="14" stroke-linecap="round"/>
+  <path d="M352 384H848" stroke="#CFC5BC" stroke-width="10" stroke-linecap="round" stroke-dasharray="1 28"/>
+  <rect x="364" y="478" width="216" height="122" rx="24" fill="#EFE7DE"/>
+  <rect x="618" y="478" width="204" height="122" rx="24" fill="#EFE7DE"/>
+  <text x="600" y="808" text-anchor="middle" fill="#0F172A" font-size="54" font-family="Manrope, Arial, sans-serif" font-weight="700">ORBIT SLEEVE 14</text>
+  <defs>
+    <linearGradient id="bg" x1="132" y1="94" x2="1052" y2="812" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FBFBFA"/>
+      <stop offset="0.5" stop-color="#F5F3F1"/>
+      <stop offset="1" stop-color="#E7E5E4"/>
+    </linearGradient>
+  </defs>
+</svg>

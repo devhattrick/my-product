@@ -1,0 +1,17 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="72" fill="url(#bg)"/>
+  <circle cx="600" cy="258" r="208" fill="#FEF3C7" fill-opacity="0.58"/>
+  <path d="M450 246C450 163.157 517.157 96 600 96C682.843 96 750 163.157 750 246V352H450V246Z" fill="#FFF7D6"/>
+  <rect x="504" y="352" width="192" height="208" rx="54" fill="#EFE7D4"/>
+  <rect x="562" y="548" width="76" height="120" rx="32" fill="#DCCFB6"/>
+  <rect x="422" y="674" width="356" height="62" rx="31" fill="#D1C3A7"/>
+  <circle cx="600" cy="234" r="112" fill="#FFFBEB"/>
+  <text x="600" y="814" text-anchor="middle" fill="#0F172A" font-size="54" font-family="Manrope, Arial, sans-serif" font-weight="700">CANVAS LAMP MINI</text>
+  <defs>
+    <linearGradient id="bg" x1="118" y1="82" x2="1060" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFBEB"/>
+      <stop offset="0.56" stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#F3F4F6"/>
+    </linearGradient>
+  </defs>
+</svg>

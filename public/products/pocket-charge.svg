@@ -1,0 +1,19 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="72" fill="url(#bg)"/>
+  <circle cx="240" cy="176" r="160" fill="#FFFFFF" fill-opacity="0.52"/>
+  <circle cx="958" cy="188" r="180" fill="#BFDBFE" fill-opacity="0.44"/>
+  <rect x="320" y="286" width="560" height="328" rx="56" fill="#D8DEE8"/>
+  <rect x="352" y="320" width="496" height="262" rx="42" fill="#F8FAFC"/>
+  <rect x="392" y="352" width="228" height="198" rx="30" fill="#E5E7EB"/>
+  <path d="M742 332L824 436L742 540" stroke="#CBD5E1" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M660 332V540" stroke="#CBD5E1" stroke-width="28" stroke-linecap="round"/>
+  <path d="M466 654H734L764 724H436L466 654Z" fill="#C4CBD8"/>
+  <text x="600" y="804" text-anchor="middle" fill="#0F172A" font-size="54" font-family="Manrope, Arial, sans-serif" font-weight="700">POCKET CHARGE MAX</text>
+  <defs>
+    <linearGradient id="bg" x1="132" y1="96" x2="1048" y2="814" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC"/>
+      <stop offset="0.56" stop-color="#EFF6FF"/>
+      <stop offset="1" stop-color="#EEF2FF"/>
+    </linearGradient>
+  </defs>
+</svg>

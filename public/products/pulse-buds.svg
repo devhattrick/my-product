@@ -1,0 +1,18 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="72" fill="url(#bg)"/>
+  <circle cx="280" cy="160" r="170" fill="#FFFFFF" fill-opacity="0.6"/>
+  <circle cx="918" cy="214" r="184" fill="#FDE68A" fill-opacity="0.36"/>
+  <path d="M468 246C468 187.458 515.458 140 574 140H626C684.542 140 732 187.458 732 246V352C732 410.542 684.542 458 626 458H574C515.458 458 468 410.542 468 352V246Z" fill="#F8FAFC"/>
+  <path d="M392 370C392 308.144 442.144 258 504 258H520V444C520 505.856 469.856 556 408 556H392V370Z" fill="#E2E8F0"/>
+  <path d="M808 370C808 308.144 757.856 258 696 258H680V444C680 505.856 730.144 556 792 556H808V370Z" fill="#E2E8F0"/>
+  <rect x="438" y="512" width="324" height="168" rx="80" fill="#E7ECF5"/>
+  <rect x="490" y="548" width="220" height="96" rx="48" fill="#F8FAFC"/>
+  <text x="600" y="802" text-anchor="middle" fill="#0F172A" font-size="54" font-family="Manrope, Arial, sans-serif" font-weight="700">PULSE BUDS</text>
+  <defs>
+    <linearGradient id="bg" x1="110" y1="72" x2="1064" y2="812" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC"/>
+      <stop offset="0.58" stop-color="#ECFEFF"/>
+      <stop offset="1" stop-color="#FFF7ED"/>
+    </linearGradient>
+  </defs>
+</svg>
