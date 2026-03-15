@@ -2,6 +2,7 @@ import { Boxes, Plus, ServerCrash, Sparkles } from "lucide-react";
 import { useState } from "react";
 
 import { AdminProductList } from "@/components/admin/admin-product-list";
+import { DeleteProductDialog } from "@/components/admin/delete-product-dialog";
 import {
   type ProductFormValues,
   emptyProductFormValues,
@@ -20,6 +21,7 @@ export function AdminPage() {
     useCatalog();
   const [dialogOpen, setDialogOpen] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
+  const [deletingProduct, setDeletingProduct] = useState<Product | null>(null);
   const [actionError, setActionError] = useState<string | null>(null);
 
   if (isLoading || !catalog) {
@@ -48,16 +50,15 @@ export function AdminPage() {
     await createProduct(values);
   }
 
-  async function handleDelete(product: Product) {
-    const shouldDelete = window.confirm(`ลบสินค้า ${product.name} ใช่หรือไม่?`);
-
-    if (!shouldDelete) {
+  async function handleDelete() {
+    if (!deletingProduct) {
       return;
     }
 
     try {
       setActionError(null);
-      await deleteProduct(product.id);
+      await deleteProduct(deletingProduct.id);
+      setDeletingProduct(null);
     } catch (deleteError) {
       setActionError(deleteError instanceof Error ? deleteError.message : "ลบสินค้าไม่สำเร็จ");
     }
@@ -66,16 +67,16 @@ export function AdminPage() {
   const featuredCount = catalog.products.filter((product) => product.featured).length;
 
   return (
-    <div className="grid gap-8">
+    <div className="grid gap-6 sm:gap-8">
       <Card className="hero-mesh overflow-hidden border-white/80">
         <CardHeader className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="space-y-4">
             <Badge variant="highlight">Admin Panel</Badge>
             <div className="space-y-3">
-              <CardTitle className="text-4xl leading-tight">
+              <CardTitle className="text-3xl leading-tight sm:text-4xl">
                 จัดการสินค้าได้ครบในหน้าเดียว
               </CardTitle>
-              <CardDescription className="max-w-3xl text-base">
+              <CardDescription className="max-w-3xl text-sm sm:text-base">
                 ตอนนี้ระบบยังไม่เชื่อม backend จริงและยังไม่มี auth แต่โครง data/service
                 แยกไว้แล้วเพื่อเพิ่ม API, database และ admin login ภายหลังได้ทันที
               </CardDescription>
@@ -85,6 +86,7 @@ export function AdminPage() {
           <Button
             type="button"
             size="lg"
+            className="w-full sm:w-auto"
             onClick={() => {
               setEditingProduct(null);
               setDialogOpen(true);
@@ -95,7 +97,7 @@ export function AdminPage() {
           </Button>
         </CardHeader>
 
-        <CardContent className="grid gap-4 pb-8 sm:grid-cols-3">
+        <CardContent className="grid grid-cols-2 gap-3 pb-7 sm:grid-cols-3 sm:gap-4 sm:pb-8">
           <div className="rounded-[1.5rem] border border-white/70 bg-white/80 p-5">
             <p className="text-sm text-slate-500">สินค้าทั้งหมด</p>
             <p className="mt-2 text-3xl font-semibold text-slate-950">{catalog.products.length}</p>
@@ -104,7 +106,7 @@ export function AdminPage() {
             <p className="text-sm text-slate-500">สินค้าแนะนำ</p>
             <p className="mt-2 text-3xl font-semibold text-slate-950">{featuredCount}</p>
           </div>
-          <div className="rounded-[1.5rem] border border-white/70 bg-white/80 p-5">
+          <div className="col-span-2 rounded-[1.5rem] border border-white/70 bg-white/80 p-5 sm:col-span-1">
             <p className="text-sm text-slate-500">หมวดหมู่สินค้า</p>
             <p className="mt-2 text-3xl font-semibold text-slate-950">{catalog.categories.length}</p>
           </div>
@@ -195,7 +197,7 @@ export function AdminPage() {
         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-sm font-medium text-slate-500">Inventory</p>
-            <h2 className="text-3xl font-semibold text-slate-950">รายการสินค้าปัจจุบัน</h2>
+            <h2 className="text-2xl font-semibold text-slate-950 sm:text-3xl">รายการสินค้าปัจจุบัน</h2>
           </div>
           <p className="text-sm text-slate-500">
             ข้อมูลจะสะท้อนกลับไปที่หน้าร้านทันทีหลังบันทึก
@@ -211,7 +213,7 @@ export function AdminPage() {
             setDialogOpen(true);
           }}
           onDelete={(product) => {
-            void handleDelete(product);
+            setDeletingProduct(product);
           }}
         />
       </section>
@@ -233,6 +235,19 @@ export function AdminPage() {
           onSubmit={handleSubmit}
         />
       ) : null}
+
+      <DeleteProductDialog
+        open={Boolean(deletingProduct)}
+        product={deletingProduct}
+        categories={catalog.categories}
+        pending={isSaving}
+        onOpenChange={(open) => {
+          if (!open) {
+            setDeletingProduct(null);
+          }
+        }}
+        onConfirm={handleDelete}
+      />
     </div>
   );
 }

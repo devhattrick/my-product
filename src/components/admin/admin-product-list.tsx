@@ -46,11 +46,11 @@ export function AdminProductList({
                 <img
                   src={product.imageUrl}
                   alt={product.name}
-                  className="h-full w-full object-cover"
+                  className="aspect-[16/10] h-full w-full object-cover sm:aspect-auto"
                 />
               </div>
 
-              <CardContent className="grid gap-4 pt-6">
+              <CardContent className="grid gap-4 pt-5 sm:pt-6">
                 <div className="flex flex-wrap items-center gap-2">
                   <Badge>{categoryName}</Badge>
                   <Badge variant="secondary">{product.sku}</Badge>
@@ -58,7 +58,7 @@ export function AdminProductList({
                 </div>
 
                 <div className="space-y-2">
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                     <h3 className="text-xl font-semibold text-slate-950">{product.name}</h3>
                     <p className="text-base font-semibold text-slate-950">{formatPrice(product.price)}</p>
                   </div>
@@ -76,14 +76,15 @@ export function AdminProductList({
                   ))}
                 </div>
 
-                <div className="flex flex-wrap gap-3 border-t border-slate-100 pt-4">
-                  <Button type="button" variant="outline" onClick={() => onEdit(product)}>
+                <div className="grid grid-cols-1 gap-3 border-t border-slate-100 pt-4 sm:grid-cols-2">
+                  <Button type="button" variant="outline" className="w-full" onClick={() => onEdit(product)}>
                     <PencilLine className="size-4" />
                     แก้ไข
                   </Button>
                   <Button
                     type="button"
                     variant="destructive"
+                    className="w-full"
                     disabled={pending}
                     onClick={() => onDelete(product)}
                   >

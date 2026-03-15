@@ -70,7 +70,7 @@ export function StorefrontPage() {
   });
 
   return (
-    <div className="grid gap-8">
+    <div className="grid gap-6 sm:gap-8">
       <StoreHero
         brandName={catalog.shop.brandName}
         heroTitle={catalog.shop.heroTitle}
@@ -82,17 +82,19 @@ export function StorefrontPage() {
       />
 
       <Card className="overflow-hidden border-white/80">
-        <CardContent className="grid gap-6 py-6">
+        <CardContent className="grid gap-5 py-5 sm:gap-6 sm:py-6">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div className="space-y-2">
               <Badge variant="secondary">Product Filter</Badge>
-              <h2 className="text-3xl font-semibold text-slate-950">ค้นหาและกรองสินค้าได้ทันที</h2>
+              <h2 className="text-2xl font-semibold text-slate-950 sm:text-3xl">
+                ค้นหาและกรองสินค้าได้ทันที
+              </h2>
               <p className="text-sm leading-6 text-slate-600">
                 ผู้ใช้ไม่ต้อง login และสามารถเลือกหมวดหมู่หรือค้นหาจากชื่อสินค้า รายละเอียด
                 และรหัสสินค้าได้เลย
               </p>
             </div>
-            <div className="relative w-full max-w-xl">
+            <div className="relative w-full max-w-none lg:max-w-xl">
               <Search className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-slate-400" />
               <Input
                 value={searchTerm}
@@ -103,10 +105,11 @@ export function StorefrontPage() {
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="-mx-1 flex gap-3 overflow-x-auto px-1 pb-2 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 sm:pb-0 clean-scrollbar">
             <Button
               type="button"
               variant={selectedCategoryId === "all" ? "default" : "outline"}
+              className="shrink-0"
               onClick={() => setActiveCategoryId("all")}
             >
               ทั้งหมด
@@ -122,6 +125,7 @@ export function StorefrontPage() {
                   key={category.id}
                   type="button"
                   variant={selectedCategoryId === category.id ? "default" : "outline"}
+                  className="shrink-0"
                   onClick={() => setActiveCategoryId(category.id)}
                 >
                   {category.name}
@@ -143,7 +147,7 @@ export function StorefrontPage() {
         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-sm font-medium text-slate-500">Catalog Results</p>
-            <h2 className="text-3xl font-semibold text-slate-950">
+            <h2 className="text-2xl font-semibold text-slate-950 sm:text-3xl">
               พบสินค้า {filteredProducts.length} รายการ
             </h2>
           </div>

@@ -38,23 +38,28 @@ function DialogOverlay({
 function DialogContent({
   className,
   children,
+  showCloseButton = true,
   ...props
-}: ComponentProps<typeof DialogPrimitive.Content>) {
+}: ComponentProps<typeof DialogPrimitive.Content> & {
+  showCloseButton?: boolean;
+}) {
   return (
     <DialogPortal>
       <DialogOverlay />
       <DialogPrimitive.Content
         className={cn(
-          "fixed left-1/2 top-1/2 z-50 grid w-[min(92vw,780px)] -translate-x-1/2 -translate-y-1/2 gap-4 rounded-[2rem] border border-white/70 bg-white/96 p-6 shadow-[0_32px_90px_rgba(15,23,42,0.2)] duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out",
+          "fixed left-1/2 top-1/2 z-50 grid w-[min(92vw,780px)] -translate-x-1/2 -translate-y-1/2 gap-4 overflow-hidden rounded-[2rem] border border-white/70 bg-white/96 p-6 shadow-[0_32px_90px_rgba(15,23,42,0.2)] duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out",
           className,
         )}
         {...props}
       >
         {children}
-        <DialogPrimitive.Close className="absolute right-5 top-5 rounded-full border border-slate-200 bg-white p-2 text-slate-500 transition hover:text-slate-900">
-          <X className="size-4" />
-          <span className="sr-only">Close</span>
-        </DialogPrimitive.Close>
+        {showCloseButton ? (
+          <DialogPrimitive.Close className="absolute right-5 top-5 rounded-full border border-slate-200 bg-white p-2 text-slate-500 transition hover:text-slate-900">
+            <X className="size-4" />
+            <span className="sr-only">Close</span>
+          </DialogPrimitive.Close>
+        ) : null}
       </DialogPrimitive.Content>
     </DialogPortal>
   );

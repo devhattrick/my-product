@@ -25,28 +25,28 @@ export function StoreHero({
   onBrowse,
 }: StoreHeroProps) {
   return (
-    <section className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-      <Card className="hero-mesh overflow-hidden border-white/80 p-8 sm:p-10">
+    <section className="grid gap-5 sm:gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+      <Card className="hero-mesh overflow-hidden border-white/80 p-6 sm:p-10">
         <div className="absolute inset-y-0 right-0 hidden w-1/2 bg-[radial-gradient(circle_at_center,rgba(148,163,184,0.14),transparent_70%)] lg:block" />
-        <div className="relative z-10 flex h-full flex-col justify-between gap-10">
-          <div className="space-y-5">
+        <div className="relative z-10 flex h-full flex-col justify-between gap-8 sm:gap-10">
+          <div className="space-y-4 sm:space-y-5">
             <Badge variant="highlight">{brandName}</Badge>
-            <div className="space-y-4">
-              <h2 className="max-w-3xl text-4xl font-semibold leading-tight sm:text-5xl">
+            <div className="space-y-3 sm:space-y-4">
+              <h2 className="max-w-3xl text-[2.15rem] font-semibold leading-[1.05] sm:text-5xl">
                 {heroTitle}
               </h2>
-              <p className="max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
+              <p className="max-w-2xl text-[15px] leading-7 text-slate-600 sm:text-lg">
                 {heroDescription}
               </p>
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-            <Button size="lg" onClick={onBrowse}>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+            <Button size="lg" className="w-full sm:w-auto" onClick={onBrowse}>
               ดูสินค้าทั้งหมด
               <ArrowRight className="size-4" />
             </Button>
-            <Button asChild variant="outline" size="lg">
+            <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
               <Link to="/admin">
                 เข้าหน้า Admin
                 <LayoutDashboard className="size-4" />
@@ -67,7 +67,7 @@ export function StoreHero({
               หน้า user เปิดสาธารณะ, มีค้นหาและ filter, และมีปุ่มต่อไปยัง Line สำหรับการปิดการขาย
             </CardDescription>
           </CardHeader>
-          <CardContent className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+          <CardContent className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-1">
             <div className="rounded-[1.5rem] border border-white/70 bg-white/80 p-4">
               <p className="text-sm text-slate-500">สินค้าใน catalog</p>
               <p className="mt-2 text-3xl font-semibold text-slate-950">{productCount}</p>
@@ -76,7 +76,7 @@ export function StoreHero({
               <p className="text-sm text-slate-500">หมวดหมู่สินค้า</p>
               <p className="mt-2 text-3xl font-semibold text-slate-950">{categoryCount}</p>
             </div>
-            <div className="rounded-[1.5rem] border border-white/70 bg-white/80 p-4">
+            <div className="col-span-2 rounded-[1.5rem] border border-white/70 bg-white/80 p-4 sm:col-span-1">
               <p className="text-sm text-slate-500">สินค้าแนะนำ</p>
               <p className="mt-2 text-3xl font-semibold text-slate-950">{featuredCount}</p>
             </div>

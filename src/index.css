@@ -106,4 +106,31 @@
       radial-gradient(circle at 90% 15%, rgba(250, 204, 21, 0.26), transparent 24%),
       linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(247, 248, 252, 0.74));
   }
+
+  .clean-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(148, 163, 184, 0.9) transparent;
+  }
+
+  .clean-scrollbar::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  .clean-scrollbar::-webkit-scrollbar-track {
+    margin: 16px 0;
+    border-radius: 9999px;
+    background: transparent;
+  }
+
+  .clean-scrollbar::-webkit-scrollbar-thumb {
+    border: 3px solid transparent;
+    border-radius: 9999px;
+    background: linear-gradient(180deg, rgba(148, 163, 184, 0.96), rgba(100, 116, 139, 0.78));
+    background-clip: padding-box;
+  }
+
+  .clean-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, rgba(100, 116, 139, 0.96), rgba(71, 85, 105, 0.84));
+    background-clip: padding-box;
+  }
 }
