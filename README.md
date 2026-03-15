@@ -38,6 +38,17 @@ Build production:
 npm run build
 ```
 
+## GitHub Pages
+
+โปรเจกต์นี้ควร deploy ผ่าน `GitHub Actions` ไม่ใช่ `Deploy from a branch` ตรง ๆ เพราะ Vite ต้อง build ไฟล์ใน `dist/` ก่อน
+
+ค่าที่ควรตั้งใน GitHub Pages:
+
+- `Source: GitHub Actions`
+- workflow ที่ใช้คือ [deploy-pages.yml](/Users/hattrick/Project/my-product/.github/workflows/deploy-pages.yml)
+
+workflow นี้จะ build และ deploy อัตโนมัติเมื่อมีการ push ไปที่ branch `develop`
+
 ## Environment
 
 คัดลอกจาก `.env.example` แล้วกำหนดค่าตามต้องการ:
